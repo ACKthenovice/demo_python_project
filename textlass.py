@@ -12,7 +12,8 @@ Created on Wed Apr 26 20:48:19 2023
 """
 
 import streamlit as st 
-import joblib,os
+import joblib
+import os
 
 # NLP Pkgs
 import spacy
