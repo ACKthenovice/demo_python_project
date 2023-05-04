@@ -241,8 +241,23 @@ v[predicted[0]]
 
 
 # In[31]:
+import streamlit as st
+import pickle
 
+with open('model.pkl', 'rb') as f:
+    clf = pickle.load(f)
 
+def predict_category(text):
+    category_id = clf.predict([text])[0]
+    return v[category_id]
+
+st.title('News Category Prediction')
+text = st.text_input('Enter news headline and description')
+if st.button('Predict category'):
+    category = predict_category(text)
+    st.write('The predicted category is:', category)
+    
+'''
 import pickle
 with open('model.pkl','wb') as f:
     pickle.dump(text_clf,f)
@@ -252,7 +267,7 @@ with open('model.pkl', 'rb') as f:
 docs_new = ['Ten Months After George Floyd’s Death, Minneapolis Residents Are at War Over Policing']
 predicted = clf2.predict(docs_new)
 v[predicted[0]]
-
+'''
 
 # In[ ]:
 
