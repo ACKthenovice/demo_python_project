@@ -57,7 +57,7 @@ nltk.download('averaged_perceptron_tagger')
 # In[7]:
 
 
-df = pd.read_json("News_Category_Dataset_v4.json", lines=True)
+df = pd.read_json(r"D:\Python Project\News_Category_Dataset_v4.json", lines=True)
 
 
 # In[8]:
